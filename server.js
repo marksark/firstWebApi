@@ -7,12 +7,13 @@ const express     = require('express'),
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-//configure db
+//configure database
 const dbConfig = require('./config/db.config.js');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+// Testing connection
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to Mark's Web First API"});
 });
