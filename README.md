@@ -5,9 +5,21 @@ The web API will be used to track a client's employees as they conduct 'trips' f
 Each trip consists of a Location, Driver, # of Passengers, and trip duration.
 A timestamp is also added to see when each trip was created and last updated.
 
+## Requirements
+
+  This project requires that users have a localized version of `MongoDB` installed as well as `NodeJS`.
+
+## Deployment Instructions
+
+1. Please clone or download this repo.
+2. Use the command line to cd into the firstWebApi folder.
+3. Run a local instance of MongoDB using the `mongod` command where the db is stored.
+4. Run `node server.js` or `npm run start`.
+5. (Install then) Use Postman to begin testing the connectivity of the API.
+
 ## General Endpoints
 
-### Test Connectivity
+### Testing Connectivity
 
   ` GET / `
 
@@ -25,7 +37,26 @@ A timestamp is also added to see when each trip was created and last updated.
 
   ` POST /trips `
 
- This will post a new trip to the Web API
+ This will post a new trip to the Web API.
+ Each trip that POSTs is required to have the following input data:
+
+  ```  
+    1. location   - or in what location the trip began
+    2. riders     - number of passengers in the vehicle for this trip
+    3. duration   - the duration, in minutes, that the trip took upon it's conclusion
+    4. driver     - the name of the driver who was in charge of the vehicle
+  ```
+
+  Each trip will then post to the DB with a unique ID that can be accessed in the `GET` requests below
+
+  This data is received by the API as follows:
+
+  ```
+  1. location   - req.body.location
+  2. riders     - req.body.riders
+  3. duration   - req.body.duration
+  4. driver     - req.body.driver
+  ```
 
 ### Retrieve Specific Trip
 
