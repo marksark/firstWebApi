@@ -7,7 +7,10 @@ A timestamp is also added to see when each trip was created and last updated.
 
 ## Requirements
 
-  This project requires that users have a localized version of `MongoDB` installed as well as `NodeJS`.
+  This project requires:
+  1. Users have a localized version of `MongoDB` installed.
+  2. Users have `NodeJS` installed and are familiar with it.
+  3. Users have Postman installed and are familiar with it.
 
 ## Deployment Instructions
 
@@ -49,7 +52,7 @@ A timestamp is also added to see when each trip was created and last updated.
 
   Each trip will then post to the DB with a unique ID that can be accessed in the `GET` requests below
 
-  This data is received by the API as follows:
+  This data is received by the API in the following form:
 
   ```
   1. location   - req.body.location
