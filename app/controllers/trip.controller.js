@@ -9,9 +9,10 @@ exports.create = (req, res) => {
   }
 
   const trip = new Trip({
-      location: req.body.location || "Untitled Location",
+      location: req.body.location,
       riders: req.body.riders,
-      duration: req.body.duration
+      duration: req.body.duration,
+      driver: req.body.driver
   });
 
   //Save a new Trip
