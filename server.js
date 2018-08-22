@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to Mark's First API"});
+    res.json({"message": "Welcome to Mark's Web First API"});
 });
 
 //connecting to the db
